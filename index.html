@@ -1,0 +1,145 @@
+<!DOCTYPE html> 
+<html lang="pt-br"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>Salário Maternidade | Silvio Eserian Advocacia</title> 
+<script src="https://cdn.tailwindcss.com"></script> 
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet"> 
+<style> 
+body { font-family: 'Montserrat', sans-serif; background-color: #f4efe6; color: #3b2f1d; } 
+.font-serif { font-family: 'Cinzel', serif; } 
+.gold-gradient { background: linear-gradient(135deg, #b08a2f 0%, #d4b15a 50%, #b08a2f 100%); } 
+.beige-gradient { background: radial-gradient(circle, #f8f3ea 0%, #efe6d7 100%); } 
+.card-glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(197, 160, 89, 0.3); } 
+.step { display: none; } 
+.step.active { display: block; animation: fadeIn 0.5s ease-out; } 
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } } 
+.btn-gold { background: linear-gradient(to bottom, #4b5d36, #3f4f2f); color: #ffffff; font-weight: bold; transition: all 0.3s; } 
+.btn-gold:hover { transform: scale(1.05); box-shadow: 0 0 15px rgba(212, 175, 55, 0.5); } 
+</style> 
+</head> 
+<body class="beige-gradient min-h-screen"> 
+<header class="py-8 text-center"> 
+<div class="mb-4"> 
+<div class="inline-block p-4 border-2 border-[#b08a2f] rounded-lg bg-white/60">
+<h1 class="font-serif text-2xl tracking-widest text-[#b08a2f]">SILVIO ESERIAN</h1> 
+<p class="text-[10px] uppercase tracking-[0.3em] text-black-300">Advocacia e Consultoria</p>
+<p class="text-[10px] uppercase tracking-[0.3em] text-black-300">OAB/SP Nº 429.195</p>
+</div> 
+</div> 
+</header> 
+<main class="max-w-4xl mx-auto px-4 pb-20"> 
+<section class="text-center mb-12"> 
+<h2 class="font-serif text-3xl md:text-5xl text-[#b08a2f] mb-4">Você sabia que pode ter direito ao Salário Maternidade?</h2> 
+<p class="text-black-300 text-lg">Descubra em menos de 1 minuto se você pode receber o benefício.</p> 
+</section> 
+<div class="card-glass rounded-2xl p-6 md:p-10 shadow-2xl relative overflow-hidden"> 
+<div class="w-full bg-black-700 h-2 rounded-full mb-8"> 
+<div id="progress" class="gold-gradient h-2 rounded-full transition-all duration-500" style="width: 20%"></div> 
+</div> 
+<div id="quiz-container"> 
+<div class="step active" id="step1"> 
+<h3 class="text-2xl font-semibold mb-6 text-center">Qual o motivo do pedido?</h3> 
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4"> 
+<button onclick="nextStep(2, 'parto')" class="p-4 rounded-xl border border-black-600 hover:border-[#c5a059] bg-white/5 transition-all text-left flex items-center gap-4"> 
+<span class="text-3xl">👶</span> 
+<div><b class="block">Parto</b><small class="text-black-400 italic">Inclusive natimorto</small></div> 
+</button> 
+<button onclick="nextStep(2, 'adocao')" class="p-4 rounded-xl border border-black-600 hover:border-[#c5a059] bg-white/5 transition-all text-left flex items-center gap-4"> 
+<span class="text-3xl">👨‍👩‍👧</span> 
+<div><b class="block">Adoção</b><small class="text-black-400">Ou guarda para fins de adoção</small></div> 
+</button> 
+<button onclick="nextStep(2, 'aborto')" class="p-4 rounded-xl border border-black-600 hover:border-[#c5a059] bg-white/5 transition-all text-left flex items-center gap-4"> 
+<span class="text-3xl">🏥</span> 
+<div><b class="block">Aborto não criminoso</b><small class="text-black-400">Espontâneo ou previsto em lei</small></div> 
+</button> 
+<button onclick="nextStep(2, 'falecimento')" class="p-4 rounded-xl border border-black-600 hover:border-[#c5a059] bg-white/5 transition-all text-left flex items-center gap-4"> 
+<span class="text-3xl">⚖️</span> 
+<div><b class="block">Falecimento da Mãe</b><small class="text-black-400">Transferência para cônjuge</small></div> 
+</button> 
+</div> 
+</div> 
+<div class="step" id="step2"> 
+<h3 class="text-2xl font-semibold mb-6 text-center">Como você trabalha ou contribui?</h3> 
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4"> 
+<button onclick="nextStep(3, 'clt')" class="p-4 rounded-xl border border-black-600 hover:border-[#c5a059] bg-white/5 transition-all text-left flex items-center gap-4"> 
+<span class="text-3xl">👩‍💼</span> 
+<div><b class="block">Carteira Assinada</b><small class="text-black-400">Urbana ou Rural</small></div> 
+</button> 
+<button onclick="nextStep(3, 'mei')" class="p-4 rounded-xl border border-black-600 hover:border-[#c5a059] bg-white/5 transition-all text-left flex items-center gap-4"> 
+<span class="text-3xl">💻</span> 
+<div><b class="block">MEI / Autônoma</b><small class="text-black-400">Contribuinte Individual</small></div> 
+</button> 
+<button onclick="nextStep(3, 'rural')" class="p-4 rounded-xl border border-black-600 hover:border-[#c5a059] bg-white/5 transition-all text-left flex items-center gap-4"> 
+<span class="text-3xl">🌾</span> 
+<div><b class="block">Trabalhadora Rural</b><small class="text-black-400">Segurada Especial</small></div> 
+</button> 
+<button onclick="nextStep(3, 'desempregada')" class="p-4 rounded-xl border border-black-600 hover:border-[#c5a059] bg-white/5 transition-all text-left flex items-center gap-4"> 
+<span class="text-3xl">🏠</span> 
+<div><b class="block">Desempregada</b><small class="text-black-400">No período de graça</small></div> 
+</button> 
+</div> 
+</div> 
+<div class="step" id="step3"> 
+<h3 class="text-2xl font-semibold mb-6 text-center">Sobre suas contribuições ao INSS:</h3> 
+<div class="space-y-4"> 
+<button onclick="showResult(true)" class="w-full p-4 rounded-xl border border-black-600 hover:border-[#c5a059] bg-white/5 transition-all text-center"> 
+Realizei pelo menos uma contribuição dentro de 10 meses (ou trabalho há mais de 1 ano no campo) 
+</button> 
+<button onclick="showResult(true)" class="w-full p-4 rounded-xl border border-black-600 hover:border-[#c5a059] bg-white/5 transition-all text-center"> 
+Minha carteira foi assinada recentemente (isento de carência) 
+</button> 
+<button onclick="showResult(false)" class="w-full p-4 rounded-xl border border-black-600 hover:border-[#c5a059] bg-white/5 transition-all text-center text-black-400"> 
+Nunca contribuí ou parei há muitos anos 
+</button> 
+</div> 
+</div> 
+<div class="step text-center" id="result"> 
+<div id="result-icon" class="text-6xl mb-4">✅</div> 
+<h3 id="result-title" class="text-3xl font-serif text-[#f1d592] mb-4"> Há possibilidade de direito ao benefício!</h3> 
+<p id="result-text" class="text-black-300 mb-8 leading-relaxed"> 
+Com base nas suas informações, você se enquadra nos critérios para o Salário-Maternidade. 
+O valor pode variar entre um salário mínimo até sua remuneração integral. 
+</p> 
+<a href="https://wa.me/5518991181572?text=Olá! Fiz o teste no site e gostaria de saber mais sobre o meu direito ao Salário Maternidade." 
+target="_blank" 
+class="btn-gold inline-flex items-center gap-3 px-8 py-4 rounded-full text-lg shadow-lg"> 
+<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.224-3.82c1.516.903 3.124 1.38 4.772 1.382 5.022.002 9.105-4.08 9.107-9.103.001-2.435-.949-4.725-2.674-6.453s-4.019-2.676-6.453-2.677c-5.021 0-9.105 4.08-9.108 9.103-.001 1.754.463 3.467 1.341 4.966l-.373 1.363 1.388-.364z"/></svg> 
+TIRE SUAS DÚVIDAS AGORA 
+</a> 
+</div> 
+</div> 
+</div> 
+<footer class="mt-12 text-center text-black-500 text-xs"> 
+<p class="mt-2">Conteúdo meramente informativo. Não constitui promessa de resultado. Atuação conforme legislações vigentes e normas éticas da OAB.</p> 
+<p>OAB/SP nº 429.195 | Silvio Eserian Advocacia e Consultoria</p> 
+</footer> 
+</main> 
+<script> 
+let userData = {}; 
+function nextStep(stepNumber, value) { 
+// Salva o dado 
+if(stepNumber === 2) userData.evento = value; 
+if(stepNumber === 3) userData.categoria = value; 
+// Esconde todos 
+document.querySelectorAll('.step').forEach(s => s.classList.remove('active')); 
+// Mostra o próximo 
+document.getElementById('step' + stepNumber).classList.add('active'); 
+// Atualiza progresso 
+const progress = (stepNumber / 4) * 100; 
+document.getElementById('progress').style.width = progress + '%'; 
+} 
+function showResult(isEligible) { 
+document.querySelectorAll('.step').forEach(s => s.classList.remove('active')); 
+document.getElementById('result').classList.add('active'); 
+document.getElementById('progress').style.width = '100%'; 
+if(!isEligible) { 
+document.getElementById('result-icon').innerText = "🔍"; 
+document.getElementById('result-title').innerText = "Precisamos Analisar seu Caso"; 
+document.getElementById('result-text').innerText = "Embora você não tenha marcado os requisitos básicos de carência, existem exceções legais que podem garantir o seu direito. Fale com um especialista agora."; 
+} 
+} 
+</script> 
+</body> 
+</html>
